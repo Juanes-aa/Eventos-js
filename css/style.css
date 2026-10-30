@@ -1,0 +1,234 @@
+/* Estilos compartidos por todas las páginas del proyecto */
+:root {
+    --primario: #4f46e5;
+    --primario-oscuro: #3730a3;
+    --primario-claro: #eef2ff;
+    --acento: #f59e0b;
+    --fondo: #f8fafc;
+    --superficie: #ffffff;
+    --texto: #0f172a;
+    --texto-suave: #64748b;
+    --borde: #e2e8f0;
+    --exito-bg: #ecfdf5;
+    --exito-texto: #065f46;
+    --error-bg: #fef2f2;
+    --error-texto: #991b1b;
+    --radio: 12px;
+    --sombra: 0 1px 3px rgba(15, 23, 42, 0.06), 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    background: var(--fondo);
+    background-image: radial-gradient(circle at top right, #e0e7ff 0%, transparent 45%);
+    background-repeat: no-repeat;
+    color: var(--texto);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Encabezado */
+header {
+    background: linear-gradient(135deg, var(--primario) 0%, #7c3aed 100%);
+    color: #ffffff;
+    padding: 36px 16px 56px;
+    text-align: center;
+    border-radius: 0 0 28px 28px;
+    box-shadow: 0 8px 24px rgba(79, 70, 229, 0.25);
+}
+
+header h1 {
+    margin: 8px 0;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+header a {
+    color: #fde68a;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+header a:hover {
+    border-bottom-color: #fde68a;
+}
+
+/* Contenido principal centrado */
+main {
+    max-width: 560px;
+    margin: -32px auto 40px;
+    padding: 0 16px;
+}
+
+/* Formularios */
+form {
+    background: var(--superficie);
+    padding: 28px;
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+}
+
+label {
+    display: block;
+    margin-top: 16px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--texto);
+}
+
+label:first-child {
+    margin-top: 0;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 11px 14px;
+    margin-top: 6px;
+    font-size: 16px;
+    font-family: inherit;
+    color: var(--texto);
+    background: var(--fondo);
+    border: 1.5px solid var(--borde);
+    border-radius: 8px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+input:hover,
+select:hover {
+    border-color: #cbd5e1;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    background: var(--superficie);
+    border-color: var(--primario);
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15);
+}
+
+/* Botones */
+.botones {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.botones input {
+    width: auto;
+    margin-top: 0;
+    padding: 11px 22px;
+    font-weight: 600;
+    cursor: pointer;
+    background: var(--superficie);
+    color: var(--texto-suave);
+    border: 1.5px solid var(--borde);
+    border-radius: 8px;
+    transition: transform 0.15s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.botones input:hover {
+    background: var(--primario-claro);
+    border-color: var(--primario);
+    color: var(--primario);
+}
+
+input[type="submit"],
+.botones input[type="submit"] {
+    background: linear-gradient(135deg, var(--primario) 0%, #7c3aed 100%);
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.35);
+}
+
+input[type="submit"]:hover,
+.botones input[type="submit"]:hover {
+    background: linear-gradient(135deg, var(--primario-oscuro) 0%, #6d28d9 100%);
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(79, 70, 229, 0.45);
+}
+
+input[type="submit"]:active,
+.botones input:active {
+    transform: translateY(0);
+}
+
+/* Menú de la página de inicio */
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    margin-bottom: 12px;
+}
+
+.menu a {
+    display: block;
+    padding: 16px 20px;
+    background: var(--superficie);
+    color: var(--texto);
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid var(--borde);
+    border-left: 4px solid var(--primario);
+    border-radius: var(--radio);
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-left-color 0.2s ease;
+}
+
+.menu a:hover {
+    transform: translateX(4px);
+    border-left-color: var(--acento);
+    box-shadow: var(--sombra);
+}
+
+/* Mensajes del taller */
+.mensaje {
+    margin-top: 20px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    font-weight: 500;
+    animation: aparecer 0.3s ease;
+}
+
+.mensaje:empty {
+    display: none;
+}
+
+.exito {
+    background: var(--exito-bg);
+    color: var(--exito-texto);
+    border: 1px solid #a7f3d0;
+    text-align: center;
+}
+
+.error {
+    background: var(--error-bg);
+    color: var(--error-texto);
+    border: 1px solid #fecaca;
+    text-align: center;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
